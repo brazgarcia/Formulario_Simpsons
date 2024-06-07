@@ -1,0 +1,128 @@
+/* Esqueleto */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    font: 12px "verdana";
+}
+
+#lista-contatos {
+    margin: 0 auto;
+    width: 50%;
+    padding: 5px;
+}
+
+#lista-contatos table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+#lista-contatos table tr {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+#lista-contato table td {
+    padding: 5px;
+}
+
+#lista-contatos table td img {
+    width: 70px;
+    border: 1px solid #000;
+}
+
+#lista-contatos table tbody tr:hover {
+    background: yellow;
+}
+
+.botao-remover-contato {
+    cursor: pointer;
+    text-align: center;
+    border: none !important;
+    width: 16px !important;
+}
+
+#formulario-cadastro-contato {
+    display: none;
+    margin: 0 auto;
+    width: 50%;
+}
+
+#formulario-cadastro-contato fieldset {
+    background: #ccc;
+    border: 1px solid #000;
+    padding: 1%;
+}
+
+#formulario-cadastro-contato legend {
+    text-align: center;
+    padding: 5xp;
+    border: 1px solid #000;
+    background: #000;
+    font-weight: bold;
+    color: #fff;
+}
+
+#formulario-cadastro-contato ul li {
+    display: inline-block;
+    padding: 5px 7% 5px 5%;
+}
+
+#formulario-cadastro-contato ul img {
+    width: 70px;
+    border: 1px solid #000;
+    background: #fff;
+    cursor: pointer
+}
+
+#formulario-cadastro-contato input {
+    display: block;
+    margin: 0px 0 5px 0;
+    border: 1px solid #000;
+    padding: 5px;
+    width: 98%;
+}
+
+#formulario-cadastro-contato button {
+    float: right;
+    background: #000;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Estilos
+
+/**
+* Animações em CSS
+*/
+a, input, text, button, img {
+    -o-transition: .3s;
+    -ms-transtion: .3s;
+    -moz-transition: .3s;
+    -webkit-transition: .2s;
+    transition: linear .2s;
+}
+
+.borda-arrendodada {
+    border-radius: 8px;
+}
+
+.sombra-container {
+    -webkit-box-shadow: 6px 7px 25px 0px rgba(0,0,0,0.49);
+    -moz-box-shadow: 6px 7px 25px 0px rgba(0,0,0,0.49);
+    box-shadow: 6px 7px 25px 0px rgba(0,0,0,0.49);
+}
+
+.sombra-texto {
+    text-shadow: 1px 1px #000;
+}
+
+.brilho-dourad:focus, .brilho-dourado:hover {
+    box-shadow: 2px 1px 25px 0px yellow;
+    border-color: yellow !important;
+    outline: none;
+}
