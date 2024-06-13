@@ -2,13 +2,20 @@ window.onload = tratar_eventos;
 
 const phoneMask = (value) => {
     if (!value) return ""
-    value = value.replace(/\D/g,'')
-    value = value.replace(/(\d{2})(\d)/,"($1) $2")
-    value = value.replace(/(\d{4})$/,"$1-$2")
-    return value
+    value = value.replace(/\D/g,'');
+    value = value.replace(/(\d{2})(\d)/,"($1) $2");
+    value = value.replace(/(\d)(\d{4})$/,"$1-$2");
+    return value;
 }
 
 function tratar_eventos() {
+
+    // Adiciona máscara no campo telefone.
+
+    document.getElementById("telefone").onkeyup = function() {
+
+        this.value = phonemask(this.value);
+    }
 
     // Mostrar formulário de Cadastro de Contato. 
 
