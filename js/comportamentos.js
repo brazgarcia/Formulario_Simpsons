@@ -1,4 +1,4 @@
-window.onload =tratar_eventos;
+window.onload = tratar_eventos;
 
 const phoneMask = (value) => {
     if (!value) return ""
@@ -22,14 +22,14 @@ function tratar_eventos() {
     // Botão de "esconder" (cancelar) o cadastro de contato.
 
     document.getElementById("esconde-form-cadastro").onclick = function() {
-        document.getElementById("formulario-cadastro-contato").style.display = 'nome';
+        document.getElementById("formulario-cadastro-contato").style.display = 'none';
         document.getElementsById('mostra-form-cadastro').style.display = 'block';
     }
 
     // Botão de adicionar contatos.
 
-    document.getElementById("form-contato").onsubimt = function() {
-
+    document.getElementById("form-contato").onsubmit = function() {
+        
         var nome = document.getElementById("nome").value;
         var email = document.getElementById("email").value;
         var telefone = document.getElementById("telefone").value;
@@ -37,13 +37,13 @@ function tratar_eventos() {
 
         var img_remove = document.createElement("img");
             img_remove.setAttribute('src', 'img/cross.png');
-            img_remove.className = 'botao-remove-contato';
+            img_remove.className = 'botao-remover-contato';
 
         var td_remove = document.createElement("td");
             td_remove.appendChild(img_remove);
 
         var img_avatar = document.createElement("img");
-            img_avatar.serAttribute('src', 'img/' + this.avatar_seleciionado.value);
+            img_avatar.setAttribute('src', 'img/' + this.avatar_selecionado.value); 
         
         var td_avatar = document.createElement("td");
             td_avatar.appendChild(img_avatar);
@@ -55,7 +55,7 @@ function tratar_eventos() {
             td_email.appendChild(document.createTextNode(email));
 
         var td_telefone = document.createElement("td");
-            td_telefone.appendChild(document.createTextNode(cidade));
+            td_telefone.appendChild(document.createTextNode(telefone));
 
         var td_cidade = document.createElement("td");
             td_cidade.appendChild(document.createTextNode(cidade));
@@ -70,8 +70,8 @@ function tratar_eventos() {
 
     document.getElementById("tbl-contatos").getElementsByTagName("tbody")[0].appendChild(tr);
 
-    document.getElementById("formulario-cadastro-contato").style.display = 'nome';
-    document.getElementById("mostra-form-cadstro").style.display = 'block';
+    document.getElementById("formulario-cadastro-contato").style.display = 'none';
+    document.getElementById("mostra-form-cadastro").style.display = 'block';
 
     ativar_botoes_exclusao();
 
@@ -82,16 +82,16 @@ function tratar_eventos() {
   
 }
 
-// Botão de remover contato
+// Botão de remover contato.
 
 function ativar_botoes_exclusao() {
 
-    var corpo_tela = document.getElementsById("tbl-contatos").getElementsByTagName("tbody")[0];
-    var imagens_tabela = corpo_tabela.getElementsById("img");
+    var corpo_tabela = document.getElementById("tbl-contatos").getElementsByTagName("tbody")[0];
+    var imagens_tabela = corpo_tabela.getElementById("img");
 
-    for(var i=0; i < imagens_tabela.length; i++) {
+    for(var i = 0; i < imagens_tabela.length; i++) {
 
-        if(imagens_tabela[i].getAttribute('class') == 'botao-remove-contato') {
+        if(imagens_tabela[i].getAttribute('class') == 'botao-remover-contato') {
 
             imagens_tabela[i].onclick = function() {
 
