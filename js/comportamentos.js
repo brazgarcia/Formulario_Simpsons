@@ -2,6 +2,7 @@
 window.onload = tratar_eventos;
     console.log('teste_1');
 
+<<<<<<< HEAD
 // const phoneMask = (value) => {
 //     if (!value) return ""
 //     value = value.replace(/\D/g,'')
@@ -9,8 +10,24 @@ window.onload = tratar_eventos;
 //     value = value.replace(/(\d{4})$/,"$1-$2")
 //     return value
 // }
+=======
+const phoneMask = (value) => {
+    if (!value) return ""
+    value = value.replace(/\D/g,'');
+    value = value.replace(/(\d{2})(\d)/,"($1) $2");
+    value = value.replace(/(\d)(\d{4})$/,"$1-$2");
+    return value;
+}
+>>>>>>> 9c8437c7ab067142bad62ee35110ec08705d5c4b
 
 function tratar_eventos() {
+
+    // Adiciona máscara no campo telefone.
+
+    document.getElementById("telefone").onkeyup = function() {
+
+        this.value = phonemask(this.value);
+    }
 
     // Mostrar formulário de Cadastro de Contato. 
 
