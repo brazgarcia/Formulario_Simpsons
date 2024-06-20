@@ -1,12 +1,14 @@
+    console.log('teste_0');
 window.onload = tratar_eventos;
+    console.log('teste_1');
 
-const phoneMask = (value) => {
-    if (!value) return ""
-    value = value.replace(/\D/g,'')
-    value = value.replace(/(\d{2})(\d)/,"($1) $2")
-    value = value.replace(/(\d{4})$/,"$1-$2")
-    return value
-}
+// const phoneMask = (value) => {
+//     if (!value) return ""
+//     value = value.replace(/\D/g,'')
+//     value = value.replace(/(\d{2})(\d)/,"($1) $2")
+//     value = value.replace(/(\d{4})$/,"$1-$2")
+//     return value
+// }
 
 function tratar_eventos() {
 
@@ -15,13 +17,14 @@ function tratar_eventos() {
     document.getElementById("mostra-form-cadastro").onclick = function() {
         this.style.display = 'none';
         document.getElementById("formulario-cadastro-contato").style.display = 'block';
-
+        console.log('teste_2');
         return false;
     }
 
     // Botão de "esconder" (cancelar) o cadastro de contato.
 
     document.getElementById("esconde-form-cadastro").onclick = function() {
+        console.log('teste_3');
         document.getElementById("formulario-cadastro-contato").style.display = 'none';
         document.getElementsById('mostra-form-cadastro').style.display = 'block';
     }
@@ -68,18 +71,20 @@ function tratar_eventos() {
             tr.appendChild(td_telefone);
             tr.appendChild(td_cidade);
 
-    document.getElementById("tbl-contatos").getElementsByTagName("tbody")[0].appendChild(tr);
+        document.getElementById("tbl-contatos").getElementsByTagName("tbody")[0].appendChild(tr);
 
-    document.getElementById("formulario-cadastro-contato").style.display = 'none';
-    document.getElementById("mostra-form-cadastro").style.display = 'block';
+        document.getElementById("formulario-cadastro-contato").style.display = 'none';
+        document.getElementById("mostra-form-cadastro").style.display = 'block';
 
-    ativar_botoes_exclusao();
-
-    return false;
+        ativar_botoes_exclusao();
+        
+        return false;
+        
     }
 
+    
     ativar_botoes_exclusao();
-  
+    console.log('teste_4');
 }
 
 // Botão de remover contato.
@@ -88,6 +93,8 @@ function ativar_botoes_exclusao() {
 
     var corpo_tabela = document.getElementById("tbl-contatos").getElementsByTagName("tbody")[0];
     var imagens_tabela = corpo_tabela.getElementById("img");
+
+    console.log('teste_5');
 
     for(var i = 0; i < imagens_tabela.length; i++) {
 
