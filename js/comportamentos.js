@@ -4,7 +4,7 @@ const phoneMask = (value) => {
     if (!value) return ""
     value = value.replace(/\D/g,'')
     value = value.replace(/(\d{2})(\d)/,"($1) $2")
-    value = value.replace(/(\d{4})$/,"$1-$2")
+    value = value.replace(/(\d{5})(\d{1,4})$/, "$1-$2");
     return value
 }
 
@@ -20,18 +20,16 @@ function tratar_eventos() {
     // Mostrar formulário de Cadastro de Contato. 
 
     document.getElementById("mostra-form-cadastro").onclick = function() {
-        this.style.display = 'none';
+        this.style.display = 'none';  // Esconde o botão <a> após ser clicado.
         document.getElementById("formulario-cadastro-contato").style.display = 'block';
-        console.log('teste_2');
-        return false;
+        return false; // Impede o comportamento padão do navegador em ir para um novo link.
     }
 
     // Botão de "esconder" (cancelar) o cadastro de contato.
 
     document.getElementById("esconde-form-cadastro").onclick = function() {
-        console.log('teste_3');
         document.getElementById("formulario-cadastro-contato").style.display = 'none';
-        document.getElementsById('mostra-form-cadastro').style.display = 'block';
+        document.getElementById('mostra-form-cadastro').style.display = 'block';
     }
 
     // Botão de adicionar contatos.
@@ -43,9 +41,10 @@ function tratar_eventos() {
         var telefone = document.getElementById("telefone").value;
         var cidade = document.getElementById("cidade").value;
 
+        // Cria o corpo de um novo contato no HTML.
         var img_remove = document.createElement("img");
             img_remove.setAttribute('src', 'img/cross.png');
-            img_remove.className = 'botao-remover-contato';
+            img_remove.classList.add('botao-remover-contato');
 
         var td_remove = document.createElement("td");
             td_remove.appendChild(img_remove);
@@ -79,17 +78,15 @@ function tratar_eventos() {
         document.getElementById("tbl-contatos").getElementsByTagName("tbody")[0].appendChild(tr);
 
         document.getElementById("formulario-cadastro-contato").style.display = 'none';
+
         document.getElementById("mostra-form-cadastro").style.display = 'block';
 
         ativar_botoes_exclusao();
         
         return false;
-        
+    
     }
 
-    
-    ativar_botoes_exclusao();
-    console.log('teste_4');
 }
 
 // Botão de remover contato.
@@ -97,9 +94,7 @@ function tratar_eventos() {
 function ativar_botoes_exclusao() {
 
     var corpo_tabela = document.getElementById("tbl-contatos").getElementsByTagName("tbody")[0];
-    var imagens_tabela = corpo_tabela.getElementById("img");
-
-    console.log('teste_5');
+    var imagens_tabela = corpo_tabela.getElementsByTagName("img");
 
     for(var i = 0; i < imagens_tabela.length; i++) {
 
