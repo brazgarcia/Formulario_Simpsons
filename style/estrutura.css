@@ -8,11 +8,21 @@ main {
     font: 12px "verdana";
 }
 
+hi {
+    text-align: center !important;
+}
+
 #lista-contatos {
     margin: 0 auto;
-    width: 50%;
+    width: 60%;
     padding: 5px;
 }
+
+#lista-contatos h1 {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
 
 #lista-contatos table {
     width: 100%;
@@ -48,7 +58,7 @@ main {
 #formulario-cadastro-contato {
     display: none;
     margin: 0 auto;
-    width: 50%;
+    width: 65%;
 }
 
 #formulario-cadastro-contato fieldset {
