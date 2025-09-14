@@ -4,6 +4,29 @@
     padding: 0;
 }
 
+#corpo {
+    box-sizing: border-box;
+}
+
+#cabecalho {
+    background-color: #ccc;
+    display: flex;
+    padding: 1%;
+    justify-content: center;
+}
+
+#mostra-form-cadastro {
+    background-color: white;
+    text-decoration: none;
+    color: #000;
+    border: solid 2px #000;
+    padding: 5px;
+}
+
+#mostra-form-cadastro:hover {
+    background-color: yellow;
+}
+
 main {
     font: 12px "verdana";
 }
@@ -42,6 +65,7 @@ hi {
 #lista-contatos table td img {
     width: 70px;
     border: 1px solid #000;
+    margin-top: 3px;
 }
 
 #lista-contatos table tbody tr:hover {
@@ -102,3 +126,11 @@ hi {
     color: #fff;
     padding: 10px;
 }
+
+#rodape {
+    background-color: #ccc;
+    display: flex;
+    padding: 1%;
+    justify-content: center;
+}
+
